@@ -79,5 +79,6 @@ int main(){
 			continue;
 		}
 	}
+	printf("\n");
 
 }	
