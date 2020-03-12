@@ -19,7 +19,7 @@ Salida:  Lista de primos
 int esPrimo(int x){
 	//inicando variables
 	int i = 2;
-	int primo;
+	int primo = 1;
 	//empezamos un while loop
 	while(i < x){
 		if(x%i == 0){
@@ -65,13 +65,14 @@ int main(){
 	scanf("%i", &n1);
 	printf("Ingresar limite superior de rango: ");
 	scanf("%i", &n2);
+	printf("Rango ingresado: [%d,%d] \n", n1, n2);
 
 
 
 	
-	// El numero es impreso en el comando si esPrimo
+	// El numero es impreso si la funcion  esPrimo
 	// lo marca como primo, de lo contrario se ignora
-	for(n1; n1 < n2; n1++){
+	for(n1; n1 < n2 + 1; n1++){
 		if(esPrimo(n1) == 1){
 			printf("%i ", n1);			
 		}
