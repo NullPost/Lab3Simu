@@ -11,6 +11,18 @@ Salida:  Respuesta a la pregunta
 //librerias
 #include <stdio.h>
 //numerar los pasos de pseudocodigo
+//
+// entero N
+// entero i = 2
+// entero primo = 1
+// leer N
+// Mientras(i < N):
+// 	si(N mod i = 0): primo = 0, romper
+// 	otro: i = i + 1 continuar
+// Si(primo = 1): Imprimir es primo
+// otro: Imprimir no es primo
+
+//iniciando variable global
 int N;
 
 int main(){
@@ -20,7 +32,7 @@ int main(){
 	scanf("%i", &N);
 	//iniciamos a chequear si el numero es primo verificando su multiplicidad con 
 	//los numeros del 2 hasta N - 1. Si alguno de ellos fuera a ser multiplo tenemos
-	//un flga llamado 'primos', el cuan chequeamos al final si es 1 o 0. 
+	//un flag llamado 'primos', el cual chequeamos al final si es 1 o 0. 
 	int i = 2;
 	int primo = 1;
 	while(i  < N ){
