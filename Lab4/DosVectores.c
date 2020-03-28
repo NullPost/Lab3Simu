@@ -2,7 +2,7 @@
 /* 
 Autor: Mario Guerra
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilado: gcc DosVectores.c -o DosVectores
+Compilado: gcc DosVectores.c -o DosVectores -lm
 Fecha: Wed Mar 25 17:42:29 CST 2020
 Resumen: pide dos vectores en R3 y muestra operaciones entre ellos
 Entrada: dos vectores en R3

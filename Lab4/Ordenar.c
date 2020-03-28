@@ -28,7 +28,7 @@ int main(){
 	//si el elemento de la derecha es menor de la izquierda cambian lugar. 
 	for(int i = 0; i < 5; i++){
 		for(int j = 0; j < 5; j++){
-			if(lista[i] > lista[j]){
+			if(lista[i] < lista[j]){
 				a = lista[i];
 				lista[i] = lista[j];
 				lista[j] = a;
