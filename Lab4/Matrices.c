@@ -15,6 +15,7 @@ Salida: a*matA, matA + matB, matA - matB, matA * matB, det(matA), tras(matB)
 #include <math.h>
 
 int main(){
+	//iniciando variables, una por cada resultado de calculo
 	float matA[3][3];
 	float matB[3][3];
 	float cons;
@@ -24,6 +25,7 @@ int main(){
 	float matProd[3][3];
 	float detA;
 	float matAinv[3][3];
+	float matAGauss[3][3];
 	//Leer matA
 	for(int i = 0; i < 3; i++){
 		for(int j = 0; j < 3; j++){
@@ -138,7 +140,77 @@ int main(){
 		printf("\n\nmatA no tiene inversa\n\n");
 	}
 
+	//Gauss matA
+	if(matA[0][0] == 0){
+		//si a11 es cero le sumamos uno a toda la fila
+		for(int i = 0; i < 3; i++){
+			matAGauss[0][i] = matA[0][i] + 1;
+		}
+	}
+	else{
+		//de lo contrario dividimos toda la fila por a11
+		for(int i = 0; i < 3; i++){
+			matAGauss[0][i] = matA[0][i]/matA[0][0];
+		}
+
+	}
+	//esto garantiza que tengamos A11 = 1 para nuestra matriz reducida
+	//F2 = F2 - a12*F1
+	for(int i = 0; i < 3; i++){
+		matAGauss[1][i] = matA[1][i] - matA[1][0]*matAGauss[0][i];
+	}
+	//F3 = F3 - a31*F1
+	for(int i = 0; i < 3; i++){
+		matAGauss[2][i] = matA[2][i] - matA[2][0]*matAGauss[0][i];
+	}
+
+	if(matAGauss[1][1] == 0){
+		//si al hacer el proceso detallado anteriormente nos da una matriz con A22 = 0
+		//solo tenemos que intercambiar la fila 2 con la fila 3 y tendremos nuestra reduccion
+		float temp[3] = {matAGauss[1][0], matAGauss[1][1], matAGauss[1][2]};
+		for(int i = 0; i < 3; i++){
+			matAGauss[1][i] = matAGauss[2][i];
+		}
+		for(int i = 0; i < 3; i++){
+			matAGauss[2][i] = temp[i];
+		}
+
+	}
+	else{
+		//de lo contrario solo nos falta modificar la fila 3
+		//dividiendo toda la fila 2 por A22
+		for(int i = 0; i < 3; i++){
+			matAGauss[1][i] = matAGauss[1][i]/matAGauss[1][1];
+			}
+		//F3 = F3 - A32*F2
+		for(int i = 0; i < 3; i++){
+			matAGauss[2][i] = matAGauss[2][i] - matAGauss[2][1]*matAGauss[1][i];
+			}
+	}
+	printf("\n\nReduccion de Gauss matA =\n");
+	for(int i = 0; i < 3; i++){
+		printf("   [%.2f, %.2f, %.2f]\n", matAGauss[i][0], matAGauss[i][1], matAGauss[i][2]);
+	}
+	
+
+
 }
 	
 
-		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
