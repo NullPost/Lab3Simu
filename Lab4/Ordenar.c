@@ -13,17 +13,21 @@ Salida:  lista ordenada
 #include <stdio.h>
 //numerar los pasos de pseudocodigo
 int main(){
+	//iniciando variables 
+	//a nos servira como un lugar temporal para almacenar datos
 	int a;
 	int lista[5];
+	//leer los 5 valores del usuario
 	for(int i = 0; i < 5; i++){
 		printf("Ingresar valor %d: ", i + 1);
 		scanf("%d", &lista[i]);
 	}
+	//imprimir el vecto original
 	printf("\nValores ingresados:");
 	for(int i = 0; i < 5; i++){
 		printf(" %d", lista[i]);
 	}
-
+	//ordenar:
 	//Se ordena los elementos de la siguente manera. se comparan dos elementos,
 	//si el elemento de la derecha es menor de la izquierda cambian lugar. 
 	for(int i = 0; i < 5; i++){
@@ -35,11 +39,13 @@ int main(){
 			}
 		}
 	}
+	//imprimir vector ordenado
 	printf("\nLista Ordenada:");
          for(int i = 0; i < 5; i++){
                  printf(" %d", lista[i]);
         }
 	printf("\n");
-
+	
+	return 0;
 }
 		

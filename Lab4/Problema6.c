@@ -13,6 +13,10 @@ Salida:  un numero real
 #include <stdio.h>
 #include <math.h>
 //numerar los pasos de pseudocodigo
+
+//Cada serie de formulo como una funcion que hace la sumatoria indicada hasta el n-esimo termino
+
+//serie del inciso a)
 long int serieA(int n){
 	long int a = 0;
 	for(int i = 1; i < n + 1; i++){
@@ -22,6 +26,7 @@ long int serieA(int n){
 	return a;
 }
 
+//serie de inciso b)
 double serieB(int n){
 	double a;
 	for(float i = 2; i <= n; i++){
@@ -31,7 +36,7 @@ double serieB(int n){
 	return a;
 }
 
-
+//serie del inciso c)
 float serieC(int n){
 	float a = 0;
 	for(int i = 1; i < n + 1; i++){
@@ -40,6 +45,7 @@ float serieC(int n){
 	return a;
 }
 
+//serie del inciso d) (Sucesion de Bode)
 double sucesionBode(int n){
 	double a = 0;
 	for(int i = 2;i < n + 1; i++){
@@ -48,8 +54,10 @@ double sucesionBode(int n){
 }
 
 int main(){
+	//iniciando variables
 	int seleccion;
 	int x;
+	//leer hasta donde llegara la sumatoria y que serie se utilizara
 	printf("Seleccione serie:\n1) k^2(k-3), k = 1 a n\n2) 3/(k-1), k = 2 a n\n3) 1/sqrt(5)(phi^k - (1 - phi)^k)) k = 1 a n\n4) Sucesion de Bode de k = 2 a n\n");
 	scanf("%d", &seleccion);
 	printf("Seleccione ultimo coeficiente n: ");
