@@ -1,6 +1,6 @@
 
 /* 
-Autor: nullpost-VirtualBox
+Autor: Mario Guerra
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 Compilado: gcc Matrices.c -o Matrices
 Fecha: Sun Mar 29 22:54:34 CST 2020
@@ -127,12 +127,14 @@ int main(){
 	matAinv[2][1] = -(matA[0][0]*matA[2][3] - matA[0][1]*matA[2][0])/detA;
 	matAinv[2][2] = (matA[0][0]*matA[1][1] - matA[0][1]*matA[1][0])/detA;
 	
+	//imprimir inversa de matA
 	printf("\n\n(matA)^-1 =\n");
 	for(int i = 0; i < 3; i++){
 		printf("   [%.2f, %.2f, %.2f]\n", matAinv[i][0], matAinv[i][1], matAinv[i][2]);
 		}
 	}
 	else{
+		//imprimir error cuando matA no tenga inversa
 		printf("\n\nmatA no tiene inversa\n\n");
 	}
 
